@@ -171,7 +171,7 @@ const getValueToShow = ({ numericValue, value, isFocused, zeroTyped }) => {
 
   if (value !== '' && !isNaN(numericValue) && numericValue > 0) {
     return String(
-      isFocused && (/^00/.test(value) || numericValue > 100)
+      isFocused && (/^00/.test(value) || numericValue > 10)
         ? numericValue
         : value
     )

@@ -41,7 +41,7 @@ export default styled(DateInput)`
         width: calc(2.2ch);
 
         &.input-month {
-          width: calc(3ch);
+          width: calc(2.7ch);
         }
         &.input-year {
           width: calc(4.4ch);
