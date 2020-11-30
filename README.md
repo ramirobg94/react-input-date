@@ -1,19 +1,19 @@
-# react-date-input
+# react-input-date
 
-[![NPM](https://img.shields.io/npm/v/react-date-input.svg)](https://www.npmjs.com/package/react-date-input) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/react-input-date.svg)](https://www.npmjs.com/package/react-input-date) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 A simple input to enter dates. Inspired on Typeform input and trying to follow the flexibility and the philosophy of [React-select](https://github.com/JedWatson/react-select).
 
 ## Install
 
 ```bash
-npm install --save react-date-input
+npm install --save react-input-date
 ```
 
 or
 
 ```bash
-yarn add react-date-input
+yarn add react-input-date
 ```
 
 ## Usage
@@ -21,7 +21,7 @@ yarn add react-date-input
 ```jsx
 import React, { Component } from 'react'
 
-import DateInput from 'react-date-input'
+import DateInput from 'react-input-date'
 
 class Example extends Component {
   state = {
@@ -50,7 +50,7 @@ class Example extends Component {
 ```jsx
 import React, { useState } from 'react'
 
-import DateInput from 'react-date-input'
+import DateInput from 'react-input-date'
 
 const Example = () => {
   const [date, setDate] = useState('12-02-2020')

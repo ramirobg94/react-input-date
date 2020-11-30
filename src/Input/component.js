@@ -1,5 +1,4 @@
-import React, { Fragment, useState } from 'react'
-import { validatorsByKey } from '../utils'
+import React, { useState } from 'react'
 import { useInput } from '../hooks'
 
 const Input = React.forwardRef(
@@ -69,7 +68,7 @@ const Input = React.forwardRef(
       }
 
       if (zeroTyped) {
-        if ([49, 50, 51, 52, 53, 54, 55, 56, 57].includes(e.keyCode)) {
+        if ([49, 50, 51, 52, 53, 54, 55, 56, 57].includes(e.keyCode)) { // 1.2.3.... keys
           const nextValue = `${e.target.value}${String.fromCharCode(e.keyCode)}`
           if (nextValue !== '' && nextValue.length <= 2) {
             moveNext({ itemIndex, [dateKey]: nextValue })
@@ -85,7 +84,7 @@ const Input = React.forwardRef(
     }
 
     const handleKeyUp = (e) => {
-      if (e.keyCode !== 8) {
+      if (e.keyCode !== 8) { // delete key
         setNextBack(false)
       }
       if (e.keyCode === 8 && e.target.value === '') {
@@ -97,12 +96,12 @@ const Input = React.forwardRef(
         }
       }
 
-      if (e.keyCode !== 37) {
+      if (e.keyCode !== 37) { // arrow key left
         setNextBackArrow(false)
       }
 
       if (
-        e.keyCode === 37 &&
+        e.keyCode === 37 && // arrow key left
         ref.current.selectionStart === ref.current.selectionEnd &&
         ref.current.selectionStart === 0
       ) {
@@ -114,12 +113,12 @@ const Input = React.forwardRef(
         }
       }
 
-      if (e.keyCode !== 38) {
+      if (e.keyCode !== 38) { // arrow key right
         setNextForwardArrow(false)
       }
 
       if (
-        e.keyCode === 39 &&
+        e.keyCode === 39 && // arrow key right
         ref.current.selectionStart === ref.current.selectionEnd &&
         ref.current.selectionStart === ref.current.value.length
       ) {
