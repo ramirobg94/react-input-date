@@ -98,7 +98,6 @@ export const useInput = ({
     setValue(_value)
   }, [])
 
-  console.log(labels[dateKey], labels, dateKey)
   return {
     label: labels[dateKey],
     placeholder: placeholders[dateKey],

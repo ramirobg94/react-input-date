@@ -58,7 +58,7 @@ const LABELS = {
   year: 'Year'
 }
 
-const DateInput = ({
+const DateInput = React.forwardRef(({
   className,
   format = 'MMDDYYYY',
   separator = '/',
@@ -69,7 +69,7 @@ const DateInput = ({
   date,
   onChange,
   ...props
-}) => {
+}, ref ) => {
   const [localDate, setDate] = useState('')
   const [elRefs, setElRefs] = React.useState([])
   const [error, setError] = useState(false)
@@ -151,7 +151,7 @@ const DateInput = ({
   }
 
   return (
-    <div className={className}>
+    <div ref={ref} className={`${className} date-input`}>
       <div className='date-input-container'>
         {React.createElement(Input, {
           disabled,
@@ -210,6 +210,6 @@ const DateInput = ({
       )}
     </div>
   )
-}
+})
 
 export default DateInput
