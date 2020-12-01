@@ -68,6 +68,8 @@ const DateInput = React.forwardRef(({
   disabled,
   date,
   onChange,
+  onFocus,
+  onBlur,
   ...props
 }, ref ) => {
   const [localDate, setDate] = useState('')
@@ -77,12 +79,20 @@ const DateInput = React.forwardRef(({
 
   const dateKeys = dateKeysByFormat[format]
 
+  const handleFocus = () => {
+    onFocus && onFocus()
+  }
+
+  const handleBlur = () => {
+    onBlur && onBlur()
+  }
+
   useEffect(() => {
     if (date) {
       setDate(date)
       handleValidateDate({ date })
     }
-  }, [])
+  }, [date])
 
   React.useEffect(() => {
     // add or remove refs
@@ -165,7 +175,9 @@ const DateInput = React.forwardRef(({
           ref: elRefs[0],
           moveBack,
           moveNext,
-          dateKey: dateKeys[0]
+          dateKey: dateKeys[0],
+          onFocus: handleFocus,
+          onBlur: handleBlur
         })}
         <Separator separator={separator} />
         {React.createElement(Input, {
@@ -180,7 +192,9 @@ const DateInput = React.forwardRef(({
           ref: elRefs[1],
           moveBack,
           moveNext,
-          dateKey: dateKeys[1]
+          dateKey: dateKeys[1],
+          onFocus: handleFocus,
+          onBlur: handleBlur
         })}
         <Separator separator={separator} />
         {React.createElement(Input, {
@@ -195,7 +209,9 @@ const DateInput = React.forwardRef(({
           ref: elRefs[2],
           moveBack,
           moveNext,
-          dateKey: dateKeys[2]
+          dateKey: dateKeys[2],
+          onFocus: handleFocus,
+          onBlur: handleBlur
         })}
       </div>
       {error && (

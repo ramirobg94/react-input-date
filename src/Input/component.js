@@ -19,7 +19,10 @@ const Input = React.forwardRef(
       moveBack,
       moveNext,
 
-      shouldManageZero = true
+      shouldManageZero = true,
+
+      onFocus,
+      onBlur
     },
     ref
   ) => {
@@ -47,13 +50,14 @@ const Input = React.forwardRef(
     const handleFocus = (e) => {
       setZeroTyped(false)
       setIsFocused(true)
-
       ref.current.select(0, ref.current.value.length)
+      onFocus()
     }
 
     const handleBlur = () => {
       setZeroTyped(false)
       setIsFocused(false)
+      onBlur()
     }
     const handleKeyDown = (e) => {
       // 48 is 0
