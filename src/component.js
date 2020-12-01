@@ -149,8 +149,7 @@ const DateInput = React.forwardRef(
         e.preventDefault()
         calendarContainer.current.getElementsByTagName('button')[0].focus()
       }
-      if (isCalendarOpen && e.key === 'Escape') {
-        console.log(' e.key')
+      if (isCalendarOpen && (e.key === 'Escape' || e.key === 'Enter') {
         e.stopPropagation()
         e.preventDefault()
         setIsCalendarOpen(false)
