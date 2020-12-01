@@ -78,6 +78,4 @@ export default styled(DateInput)`
     color: rgb(176 79 79);
     text-align: left;
   }
-
-  margin: 16px 0 32px;
 `
