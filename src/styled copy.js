@@ -23,33 +23,31 @@ export default styled(DateInput)`
         }
 
         display: block;
-
+        width: 100%;
         font-family: inherit;
-
+        color: rgb(79, 176, 174);
+        padding: 0px 0px 8px;
         border: none;
         outline: none;
         border-radius: 0px;
         appearance: none;
         background: none;
         transform: translateZ(0px);
-
+        font-size: 30px;
         -webkit-font-smoothing: antialiased;
         line-height: unset;
-
+        transition: box-shadow 0.1s ease-out 0s;
+        box-shadow: rgba(79, 176, 174, 0.3) 0px 1px;
         width: calc(2.2ch);
 
         &.input-month {
-          &.empty {
-            width: calc(2.7ch);
-          }
+          width: calc(2.7ch);
         }
         &.input-year {
-          width: calc(4ch);
+          width: calc(4.4ch);
         }
         &::placeholder {
-        }
-        &:focus {
-          background: #c3c3c338;
+          color: rgb(79 176 174 / 25%);
         }
       }
       .label-container {
@@ -59,21 +57,34 @@ export default styled(DateInput)`
           margin: 0px;
           max-width: 100%;
           font-weight: unset;
+          font-size: 14px;
+          line-height: 20px;
+          color: rgb(79, 176, 174);
         }
       }
     }
   }
 
   .separator {
+    margin-right: 16px;
+    margin-bottom: 8px;
+    margin-left: 20px;
     align-self: flex-end;
 
+    color: rgb(79, 176, 174);
+
+    font-size: 30px;
+    line-height: 38px;
+
     max-width: 100%;
+    font-weight: unset;
   }
 
   .error-container {
     margin: 0px;
     max-width: 100%;
-
+    font-weight: unset;
+    font-size: 14px;
     line-height: 20px;
     color: rgb(176 79 79);
     text-align: left;

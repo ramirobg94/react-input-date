@@ -22,7 +22,9 @@ const Input = React.forwardRef(
       shouldManageZero = true,
 
       onFocus,
-      onBlur
+      onBlur,
+
+      showLabel
     },
     ref
   ) => {
@@ -137,15 +139,15 @@ const Input = React.forwardRef(
 
     return (
       <div className='input-container'>
-        <div className='label-container'>
+        {showLabel && <div className='label-container'>
           <label className='label'>{label}</label>
-        </div>
+    </div> }
         <input
           ref={ref}
-          className={` date-input input-${dateKey}`}
+          className={` date-input input-${dateKey} ${value === '' ? 'empty' : ''}`}
           disabled={disabled}
           placeholder={placeholder}
-          type={error ? 'text' : 'text'}
+          type='text'
           onKeyDown={handleKeyDown}
           onKeyUp={handleKeyUp}
           value={getValueToShow({
