@@ -1,6 +1,6 @@
 {
   "name": "react-input-date",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Made with create-react-library",
   "author": "ramirobg94",
   "license": "MIT",
@@ -26,6 +26,7 @@
   "peerDependencies": {
     "@emotion/react": "^11.1.1",
     "@emotion/styled": "^11.0.0",
+    "react-calendar": "^3.2.1",
     "react": "^16.0.0"
   },
   "devDependencies": {
