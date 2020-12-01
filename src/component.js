@@ -150,11 +150,12 @@ const DateInput = React.forwardRef(
         calendarContainer.current.getElementsByTagName('button')[0].focus()
       }
 
+
+
       if (isCalendarOpen && e.key === 'Enter') {
         e.stopPropagation()
         e.preventDefault()
-        const calendarButtons = calendarContainer.current.getElementsByTagName('button')
-        if([...calendarButtons].includes(document.activeElement)){
+        if([...calendarContainer.current.getElementsByTagName('button')].includes(document.activeElement)){
           document.activeElement.click()
         }
       }
