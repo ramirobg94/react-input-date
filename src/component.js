@@ -150,8 +150,6 @@ const DateInput = React.forwardRef(
         calendarContainer.current.getElementsByTagName('button')[0].focus()
       }
 
-
-
       if (isCalendarOpen && e.key === 'Enter') {
         e.stopPropagation()
         e.preventDefault()
@@ -173,7 +171,7 @@ const DateInput = React.forwardRef(
       return () => {
         window.removeEventListener('keydown', handleShouldFocusCalendar)
       }
-    }, [elRefs, calendarContainer, isCalendarOpen])
+    }, [elRefs, calendarContainer, isCalendarOpen, document.activeElement])
 
     const handleValidateDate = ({ date }) => {
       setError(false)

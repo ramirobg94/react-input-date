@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
 import DateInput from 'react-date-input'
-import 'react-date-input/dist/index.css'
+//import 'react-date-input/dist/index.css'
 
 export const ExampleComponent = ({ initialDate, format, separator}) => {
   const [date, setDate] = useState(initialDate)
